@@ -52,12 +52,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/web.loader.js";
+      var loaderUrl = buildUrl + "/15ba3f971d610fbd9977d8b3032e52f3.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/web.data",
-        frameworkUrl: buildUrl + "/web.framework.js",
-        codeUrl: buildUrl + "/web.wasm",
+        dataUrl: buildUrl + "/7a7fc63d7f5f3e75ca886d140e94cc58.data.gz",
+        frameworkUrl: buildUrl + "/d4e08a85d5d177fbb3fdf0242cf16bfc.framework.js.gz",
+        codeUrl: buildUrl + "/7ac8a98713d68dc0ca0064a31c5bc467.wasm.gz",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "GreedyWebGl",
@@ -116,6 +116,7 @@
         createUnityInstance(canvas, config, (progress) => {
           document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
               }).then((unityInstance) => {
+                window.unityInstance = unityInstance;
                 document.querySelector("#unity-loading-bar").style.display = "none";
                 document.querySelector("#unity-fullscreen-button").onclick = () => {
                   unityInstance.SetFullscreen(1);
